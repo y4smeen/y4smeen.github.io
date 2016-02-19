@@ -856,6 +856,7 @@ call-to-action .button {
    font-size: 15px;
    line-height: 24px;
    width: 65%;
+   resize: vertical;
 }
 #contact input:focus,
 #contact textarea:focus,

@@ -109,7 +109,7 @@
 
                      </span><br>
 						   <span>(646) 770-1445</span><br>
-                     <span>yasmeen+w@protonmail.com</span>
+                     <span>yasmeen@roumie.org</span>
 					   </p>
 
                </div>
@@ -588,18 +588,67 @@
 
             <div class="eight columns">
 
+              <form method="POST" id="contactForm" name="contactForm" action="">
+                <div>
+                  <label for="contactEmail">Email <span class="required">*</span></label>
+                  <input type="email" value="" size="35" id="contactEmail" name="email" placeholder="your@email.com"></input>
+                </div>
+                <div>
+
+                <div>
+                  <label for="contactMessage">Message <span class="required">*</span></label>
+                  <textarea cols="50" rows="15" id="contactMessage" name="message" placeholder="Your message..."></textarea>
+                </div>
+
+                <!-- <input type="hidden" name="_subject" value="Website contact" />
+                <input type="text" name="_gotcha" style="display:none" /> -->
+
+                <!-- <input type="submit" class="submit" value="Send"></input> -->
+                <div>
+                  <button class="submit" type="submit">Submit</button>
+                  <span id="image-loader">
+                    <img alt="" src="images/loader.gif">
+                  </span>
+                </div>
+                <br>
+              </form>
+
+              <script>
+                var contactform =  document.getElementById('contactform');
+                contactform.setAttribute('action', '//formspree.io/' + 'yasmeen' + '@' + 'roumie' + '.' + 'org');
+              </script>
+
+              <!-- <form action="http://mailthis.to/yasmeen" method="post">
+                <div>
+                  <label for="contactEmail">Email <span class="required">*</span></label>
+                  <input type="email" value="" size="35" id="contactEmail" name="email" placeholder="your@email.com" />
+                </div>
+
+                <div>
+                   <label for="contactMessage">Message <span class="required">*</span></label>
+                   <textarea cols="50" rows="15" id="contactMessage" name="message"></textarea>
+                </div>
+
+                <div>
+                   <button class="submit" type="submit">Submit</button>
+                   <span id="image-loader">
+                      <img alt="" src="images/loader.gif">
+                   </span>
+                </div>
+
+              </form> -->
                <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
+               <!-- <form action="http://mailthis.to/yasmeen" method="POST" id="contactForm" name="contactForm">
 					<fieldset>
 
                   <div>
 						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+						   <input type="text" value="" size="35" id="contactName" name="name" required>
                   </div>
 
                   <div>
 						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+						   <input type="email" value="" size="35" id="contactEmail" name="email">
                   </div>
 
                   <div>
@@ -607,21 +656,13 @@
 						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
                   </div>
 
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
 
-                  <div>
-                     <button class="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif">
-                     </span>
-                  </div>
+
+
 
 					</fieldset>
-				   </form> <!-- Form End -->
-
+				   </form>  -->
+<!-- Form End -->
                <!-- contact-warning -->
                <div id="message-warning"> Error</div>
                <!-- contact-success -->
@@ -640,7 +681,7 @@
 					   <p class="address">
 						   Yasmeen Roumie<br>
 						   <span>(646) 770-1445</span><br>
-               <span>yasmeen+w@protonmail.com</span>
+               <span>yasmeen@roumie.org</span>
 					   </p>
 
 				   </div>
