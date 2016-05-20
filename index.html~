@@ -109,7 +109,7 @@
 
                      </span><br>
 						   <span>(646) 770-1445</span><br>
-                     <span>yasmeen[at]roumie.org</span>
+                     <span>yasmeen@roumie.org</span>
 					   </p>
 
                </div>
@@ -146,9 +146,6 @@
             <div class="row item">
 
                <div class="twelve columns">
-		 
-		  <h3>Fordham University</h3>
-		  <p class="info">B.S. Computer Science <span>&bull;</span><em class="date">May 2020</em></p>
 
                   <h3>Stuyvesant High School</h3>
                   <p class="info">Focus in Computer Science <span>&bull;</span> <em class="date">June 2016</em></p>
@@ -157,7 +154,7 @@
                   Relevant Coursework: Intro to Computer Science I & II, AP Computer Science, Software Development
                   Extracurriculars: FIRST Robotics, Girls Who Code, Fencing, Jazz Band
                   </p>
-		  
+
                </div>
 
             </div> <!-- item end -->
