@@ -105,6 +105,17 @@
 	img:hover {
 		visibility: show
 	}
+		
+	a .myName {
+		background-position: -0% 0;
+		background-size: 200% auto;
+		text-decoration: none;
+		transition: background-position 0.5s ease-out;	
+	}
+		
+	a .myName:hover {
+		background-position: -99.99% 0;
+	}
 	</style>
 </head>
 <body>
@@ -112,7 +123,7 @@
 	<div class="ui main text container grid">
 		
 		<div class="ten wide column">
-			<a href="https://yasmeen.github.io"><h1>Hi, I'm Yasmeen!</h1></a>
+			<a class="myName" href="https://yasmeen.github.io"><h1>Hi, I'm Yasmeen!</h1></a>
 		</div>
 		<div class="four wide column">
 		</div>
