@@ -11,6 +11,16 @@
 	crossorigin="anonymous"></script>
 	<script src="semantic/dist/semantic.min.js"></script>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73710322-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73710322-1');
+	</script>
+	
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
 	<!-- Emojis -->
@@ -106,6 +116,14 @@
 		visibility: show
 	}
 	</style>
+	
+	a .myName {
+		color: black;	
+	}
+		
+	a .myName:hover {
+		color: rgba(0, 0, 0, 0.60);
+	}
 </head>
 <body>
 
@@ -140,7 +158,7 @@
 			<div class="ui stackable two item menu">
 			  
 			  
-			  <a class="item" href="index.html">Work</a>
+			  <a class="item" href="https://yasmeen.github.io">Work</a>
 			  <a class="item active" href="projects.html">Projects</a>
 			  <!-- <a class="item">Blog</a>
 			  <a class="item" href="about.html">About</a> -->
