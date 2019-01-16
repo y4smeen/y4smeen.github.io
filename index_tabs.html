@@ -34,6 +34,34 @@
 	<link rel="shortcut icon" type="image/x-icon" href="static/img/verified.ico"/>
 
 	<link rel='stylesheet' href='static/css/style.css'>
+
+	<!-- tabs -->
+	<script>
+		$(document)
+		  .ready(function() {
+		    $('.ui.menu a.item')
+		      .on('click', function() {
+		        $(this)
+		          .addClass('active')
+		          .siblings()
+		          .removeClass('active')
+	            ;
+	            $(this)
+	              .tab({
+	                evaluateScripts : 'once',
+	                context         : 'parent',
+	                auto            : true,
+	                path            : '/'
+	              })
+	            ;
+
+		      })
+		    ;
+		  })
+		;
+
+
+	</script>
 </head>
 <body>
 
@@ -62,18 +90,23 @@
 		</div>
 
 		<div class="sixteen wide column">
-			<div class="ui stackable two item menu">
-			  <a class="item active" href="#">Work</a>
-			  <a class="item" href="https://yasmeen.github.io/projects">Projects</a>
-			  <!-- <a class="item">Blog</a>
-			  <a class="item" href="about.html">About</a> -->
+			<div class="ui stackable three item menu">
+			  <a class="item active" data-tab="work">Work</a>
+			  <a class="item" data-tab="projects">Projects</a>
+			  <a class="item" data-tab="about">About</a>
 			</div>
+
+			<!-- <div class="ui tabular menu">
+				<div class="item"> a </div>
+				<a class="item"> b </a>
+				<a class="item active"> c </a>
+			</div> -->
 		</div>
 
-		<div class="sixteen wide column work">
+		<div class="sixteen wide column work"  >
 
 			<!-- WORK --> 
-			<div class="ui very relaxed items">
+			<div class="ui very relaxed items tab active" data-tab="work">
 
 				<!-- Goldman Sachs -->
 				<div class="item">
@@ -191,6 +224,86 @@
 
 			</div>
 		</div>
+
+		<div class="sixteen wide column projects">
+
+			<!-- PROJECTS --> 
+			<div class="ui very relaxed items tab" data-tab="projects">
+
+				<!-- Cram -->
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="http://bit.ly/cram-app">Cram</a>
+						<div class="meta">
+							<span class="cinema">Dec 2017 | YHack</span>
+							<span class='ec ec-trophy '></span>
+						</div>
+						<div class="description">
+							<p>
+								Multiplayer trivia app with questions generated based on course lectures/notes.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- radAR -->
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="http://bit.ly/radAR-app">radAR</a>
+						<div class="meta">
+							<span class="award">Sep 2017 | MHacks X</span>
+							<span class='ec ec-trophy '></span>
+						</div>
+						<div class="description">
+							<p>
+								Augmented reality iOS app for that displays Yelp rating and Facebook check-in info above detected storefronts.
+							</p>
+						</div>
+						<div class="extra">
+							<div class="ui label"><i class="eye icon"></i>Augmented Reality</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- PillAR -->
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="http://bit.ly/pill-AR">PillAR</a>
+						<div class="meta">
+							<span class="cinema">Sep 2017 | PennApps XVI</span>
+							<span class='ec ec-trophy '></span>
+						</div>
+						<div class="description">
+							<p>
+								Augmented reality iOS app that uses computer vision to identify text on pill bottles and track medication usage.
+							</p>
+						</div>
+						<div class="extra">
+							<div class="ui label"><i class="eye icon"></i>Augmented Reality</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Fizz Filter -->
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="http://bit.ly/fizz-filter">Fizz Filter</a>
+						<div class="meta">
+							<span class="cinema">Oct 2016 | Reality Virtually Hackathon</span>
+						</div>
+						<div class="description">
+							<p>
+								Mixed reality HoloLens app that allows users to scan a room and virtually apply a theme to the walls and furniture.
+							</p>
+						</div>
+						<div class="extra">
+							<div class="ui label"><i class="eye icon"></i>Augmented Reality</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="eight wide column">
 		</div>
 		<div class="sixteen wide column">

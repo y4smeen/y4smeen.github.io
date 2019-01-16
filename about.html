@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <head>
-	<title>Yasmeen Roumie</title>
+	<title>About | Yasmeen Roumie</title>
 	<!-- META TAGS -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name = "description" content = "Learn more about Yasmeen" />
 
 	<!-- JS -->
 	<script
@@ -10,6 +11,16 @@
 	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	crossorigin="anonymous"></script>
 	<script src="semantic/dist/semantic.min.js"></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-73710322-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73710322-1');
+	</script>
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
@@ -20,155 +31,166 @@
 	<link rel='stylesheet' href='https://unpkg.com/emoji.css/dist/emoji.min.css'>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico"/>
+	<link rel="shortcut icon" type="image/x-icon" href="static/img/verified.ico"/>
 
-	<style type="text/css">
-	body {
-	background-color: #FFFFFF;
-	}
-	.ui.menu .item img.logo {
-	margin-right: 1.5em;
-	}
-	.main.container {
-	margin-top: 7em;
-	}
-	.wireframe {
-	margin-top: 2em;
-	}
-	.ui.footer.segment {
-	margin: 5em 0em 0em;
-	padding: 5em 0em;
-	}
-	
-	.workLink {
-		background-position: -0% 0;
-		background-size: 200% auto;
-		text-decoration: none;
-		transition: background-position 0.5s ease-out;
-	}
-	.workLink:hover {
-		background-position: -99.99% 0;
-	}
-	/* Hunter */
-	/* #57307f */
-	.hunter {
-		background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(87, 48, 127, 0.15) 50%);
-		color: rgba(87, 48, 127, 0.75);
-	}
-	.hunter:hover {
-		color: rgba(87, 48, 127, 0.75);
-	}
-	/* Tinder */
-	/* #fd5068 */
-	.tinder {
-		background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(253, 80, 104, 0.15) 50%);
-		color: rgba(253, 80, 104, 0.75);
-	}
-	.tinder:hover {
-		color: rgba(253, 80, 104, 0.75);
-	}
-	/* Snapchat */
-	/* #FFFC00 */
-	.snapchat {
-		background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(255, 252, 0, 0.35) 50%);
-		color: rgba(250, 190, 0, 1);
-	}
-	.snapchat:hover {
-		color: rgba(250, 190, 0, 1);
-	}
-	/* NASA */
-	/* #15418c */
-	.nasa {
-		background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(21, 65, 140, 0.15) 50%);
-		color: rgba(21, 65, 140, 0.75);
-	}
-	.nasa:hover {
-		color: rgba(21, 65, 140, 0.75);
-	}
-	.projects {
-		margin-top: 1em
-	}
-	/*.devpostLink {
-		color: white;
-	}
-	.devpostLink:hover {
-		color: white;
-	}*/
-	a .projectLink:hover {
-		color: rgba(0, 0, 0, 0.60);
-	}
-
-	img {
-		visibility: hidden;
-	}
-
-	img:hover {
-		visibility: show
-	}
-	</style>
+	<link rel='stylesheet' href='static/css/style.css'>
 </head>
 <body>
 
 	<div class="ui main text container grid">
 		
 		<div class="ten wide column">
-			<h1>Hi, I'm Yasmeen!</h1>
-		</div>
-		<div class="four wide column">
-		</div>
-		<div class="two wide column">
-		</div>
-
-		<div class="twelve wide column">
+			<a class="myName" href="https://yasmeen.github.io"><h1>Hi, I'm Yasmeen!</h1></a>
+			<br>
 			<p>
-				I'm a 3rd year computer science student at <a class="hunter workLink" href="http://www.hunter.cuny.edu/main/">Hunter College</a>. I'll be at <a class="tinder workLink" href="https://tinder.com">Tinder</a> this summer,
-				and previously worked at <a class="snapchat workLink" href="https://snapchat.com">Snapchat</a> and <a class="nasa workLink" href="https://nasa.gov">NASA</a>.
+				I'm currently a 3rd year computer science student & I previously worked at <a class="tinder workLink" href="https://tinder.com">Tinder</a>,
+				<a class="snapchat workLink" href="https://snapchat.com">Snapchat</a>, and <a class="nasa workLink" href="https://nasa.gov">NASA</a>.
 			</p>
-		</div>
-		<div class="four wide column">
-		</div>
-
-		<div class="sixteen wide column">
-			<a href="https://github.com/yasmeen"><i class="github icon"></i></a>
-			<a href="https://linkedin.com/in/yroumie"><i class="linkedin icon"></i></a>
+			<br>
+			<p>
+				<span class='ec ec-round-pushpin'></span> Cambridge, MA  <span class="ec ec-soon"></span>  New York, NY
+				<br>
+				<span class='ec ec-coffee '></span><a class="underlined" href="https://twitter.com/messages/compose?recipient_id=3090270271"> Let's chat! </a>
+			</p>
+			<br>
+			<a href="http://bit.ly/yasmeen-github"><i class="github icon"></i></a>
+			<a href="http://bit.ly/yasmeen-linkedin"><i class="linkedin icon"></i></a>
 			<a href="mailto:yroumie.tech@gmail.com"><i class="mail icon"></i></a>
-
+		</div>
+		<div class="six wide column">
+			<img src="static/img/hey_bitmoji.png" style="visibility: visible; width: 200px;">
 		</div>
 
 		<div class="sixteen wide column">
-			<div class="ui stackable four item menu">
+			<div class="ui stackable three item menu">
 			  
-			  <a class="item" href="index.html">Projects</a>
-			  <a class="item" href="work.html">Work</a>
-			  <a class="item">Blog</a>
-			  <a class="item active" href="about.html">About</a>
+			  <a class="item" href="index">Work</a>
+			  <a class="item" href="projects">Projects</a>
+			  <a class="item active" href="about">About</a>
 			</div>
 		</div>
 
-		<div class="sixteen wide column about">
+		<div class="sixteen wide column press">
+			<!-- About --> 
+			<h1>ABOUT</h1>
+	
+			<div class="ui statistics">
+			  <div class="red statistic">
+			    <div class="value">
+			      21
+			    </div>
+			    <div class="label">
+			      Years
+			    </div>
+			  </div>
+			  <div class="orange statistic">
+			    <div class="value">
+			      47
+			    </div>
+			    <div class="label">
+			      Hackathons
+			    </div>
+			  </div>
+			  <div class="yellow statistic">
+			    <div class="value">
+			      6
+			    </div>
+			    <div class="label">
+			      Internships
+			    </div>
+			  </div>
+			</div>
 
-			<!-- PROJECTS --> 
-			<div class="ui items">
+			<div>
+				I like to code, <a href="https://nomadlist.com/@yasmeen">travel</a>, drink bubble tea, and play polytopia. 
+			</div>
+
+			<!-- <div class="ui very relaxed items">
+
 				<div class="item">
-				    <div class="image">
-				      <img src="static/img/cram.png">
-				    </div>
-				    <div class="content">
-				      <a class="header">Header</a>
-				      <div class="meta">
-				        <span>Description</span>
-				      </div>
-				      <div class="description">
-				        <p></p>
-				      </div>
-				      <div class="extra">
-				        Additional Details
-				      </div>
-				    </div>
-				  </div>
-			</div>
+					<div class="content">
+						<a class="header underlined" href="http://www.chapter1.io/2018/03/snap.html">A Day in Life as a Software Engineering Intern at Snapchat!</a>
+						<div class="meta">
+							<span class="cinema">chapter1.io | Mar 2018</span>
+						</div>
+					</div>
+				</div>
+
+			</div> -->
+			
 		</div>
-		<div class="eight wide column">
+
+		<div class="sixteen wide column press">
+			<!-- PRESS --> 
+			<h2>FEATURES</h2>
+	
+			<div class="ui very relaxed items">
+
+				<!-- Press -->
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="http://www.chapter1.io/2018/03/snap.html">A Day in Life as a Software Engineering Intern at Snapchat!</a>
+						<div class="meta">
+							<span class="cinema">chapter1.io | Mar 2018</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="https://blog.hasura.io/3d-printing-image-recognition-data-visualisation-augmented-reality-more-pennapps-2017-saw-e178bba7bf7c">3D printing, image recognition, data visualisation, augmented reality & more: PennApps 2017 saw some extremely creative apps built on Hasura</a>
+						<div class="meta">
+							<span class="cinema">Hasura | Sep 2017</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="https://hereforafew.com/journal/girls-girls">Find the Girls' Girls</a>
+						<div class="meta">
+							<span class="cinema">Here For a Few | Aug 2017</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="https://technical.ly/baltimore/2016/11/07/technica-female-hackathon-projects/">10 projects from Technica, the world’s biggest female hackathon</a>
+						<div class="meta">
+							<span class="cinema">Technical.ly Baltimore | Nov 2016</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="item">
+					<div class="content">
+						<a class="header underlined" href="https://finance.yahoo.com/news/goodwall-raises-2-1-million-150009416.html">Goodwall Raises $2.1 Million in Seed Round Funding</a>
+						<div class="meta">
+							<span class="cinema">Yahoo! Finance | Jan 2016</span>
+						</div>
+					</div>
+				</div> -->
+
+				<div class="item">
+					<div class="content">
+						<a class="header underlined" href="https://issuu.com/stuyspectator/docs/the_spectator_issue_1_1508b518775acb/7">Yasmeen Roumie's Journey to Space</a>
+						<div class="meta">
+							<span class="cinema">The Spectator | Sep 2015</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+		</div>
+
+		<div class="sixteen wide column">
+			<center>
+				Made with <span class='ec ec-sparkling-heart '></span>
+				<br>
+				ⓒ <a href="https://github.com/yasmeen">YR</a> 2019
+			</center>
 		</div>
 	</div>
 </body>
