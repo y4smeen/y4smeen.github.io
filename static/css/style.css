@@ -40,15 +40,6 @@ padding: 5em 0em;
 .workLink:hover {
 	background-position: -99.99% 0;
 }
-/* Hunter */
-/* #57307f */
-.hunter {
-	background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(87, 48, 127, 0.15) 50%);
-	color: rgba(87, 48, 127, 0.75);
-}
-.hunter:hover {
-	color: rgba(87, 48, 127, 0.75);
-}
 /* Celo */
 /* #fd5068 */
 .celo {
@@ -85,23 +76,3 @@ padding: 5em 0em;
 .nasa:hover {
 	color: rgba(21, 65, 140, 0.75);
 }
-/*.projects {
-	margin-top: 15px;
-}*/
-/*.devpostLink {
-	color: white;
-}
-.devpostLink:hover {
-	color: white;
-}*/
-/*a .projectLink:hover {
-	color: rgba(0, 0, 0, 0.60);
-}*/
-
-/*img {
-	visibility: hidden;
-}*/
-
-/*img:hover {
-	visibility: show
-}*/
