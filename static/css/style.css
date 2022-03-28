@@ -1,78 +1,108 @@
 a {
-	color: #383838;
+  color: #383838;
 }
 
 .myName:hover {
-	color: #383838 !important;
+  color: #383838 !important;
 }
 
 .underlined:hover {
-	color: #383838 !important;
+  color: #383838 !important;
 }
 
 .underlined {
-	border-bottom: 2px solid #bae1ff !important;
+  border-bottom: 2px solid #bae1ff !important;
 }
 
 body {
-background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .ui.menu .item img.logo {
-margin-right: 1.5em;
+  margin-right: 1.5em;
 }
 .main.container {
-margin-top: 7em;
+  margin-top: 7em;
 }
 .wireframe {
-margin-top: 2em;
+  margin-top: 2em;
 }
 .ui.footer.segment {
-margin: 5em 0em 0em;
-padding: 5em 0em;
+  margin: 5em 0em 0em;
+  padding: 5em 0em;
 }
 
 .workLink {
-	background-position: -0% 0;
-	background-size: 200% auto;
-	text-decoration: none;
-	transition: background-position 0.5s ease-out;
+  background-position: -0% 0;
+  background-size: 200% auto;
+  text-decoration: none;
+  transition: background-position 0.5s ease-out;
 }
 .workLink:hover {
-	background-position: -99.99% 0;
+  background-position: -99.99% 0;
 }
 /* Celo */
 /* #fd5068 */
 .celo {
-	background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(53,208,127,0.15) 50%);
-	color: rgba(53, 208, 127, 1.00);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(53, 208, 127, 0.15) 50%
+  );
+  color: rgba(53, 208, 127, 1);
 }
 .celo:hover {
-	color: rgba(53, 208, 127, 1.00);
+  color: rgba(53, 208, 127, 1);
 }
 /* Tinder */
 /* #fd5068 */
 .tinder {
-	background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(253, 80, 104, 0.15) 50%);
-	color: rgba(253, 80, 104, 0.75);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(253, 80, 104, 0.15) 50%
+  );
+  color: rgba(253, 80, 104, 0.75);
 }
 .tinder:hover {
-	color: rgba(253, 80, 104, 0.75);
+  color: rgba(253, 80, 104, 0.75);
 }
 /* Snapchat */
 /* #FFFC00 */
 .snapchat {
-	background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(255, 252, 0, 0.35) 50%);
-	color: rgba(250, 190, 0, 1);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 252, 0, 0.35) 50%
+  );
+  color: rgba(250, 190, 0, 1);
 }
 .snapchat:hover {
-	color: rgba(250, 190, 0, 1);
+  color: rgba(250, 190, 0, 1);
 }
 /* NASA */
 /* #15418c */
 .nasa {
-	background-image: linear-gradient(to right, rgba(255,255,255,1) 50%, rgba(21, 65, 140, 0.15) 50%);
-	color: rgba(21, 65, 140, 0.75);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(21, 65, 140, 0.15) 50%
+  );
+  color: rgba(21, 65, 140, 0.75);
 }
 .nasa:hover {
-	color: rgba(21, 65, 140, 0.75);
+  color: rgba(21, 65, 140, 0.75);
+}
+
+/* Oscar */
+/* #4f50ff */
+.oscar {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(79, 80, 255, 0.15) 50%
+  );
+  color: rgb(79, 80, 255, 0.75);
+}
+.oscar:hover {
+  color: rgb(79, 80, 255, 0.75);
 }
