@@ -109,7 +109,7 @@ body {
 
 /* Hook */
 /* #e16900 */
-.hook {
+.hookxyz {
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 1) 50%,
@@ -117,6 +117,6 @@ body {
   );
   color: rgb(225, 105, 0);
 }
-.hook:hover {
+.hookxyz:hover {
   color: rgba(225, 105, 0, 1);
 }
