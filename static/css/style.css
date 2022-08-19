@@ -106,3 +106,17 @@ body {
 .oscar:hover {
   color: rgb(79, 80, 255, 0.75);
 }
+
+/* Hook */
+/* #e16900 */
+.hook {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(222, 111, 0, 0.416) 50%
+  );
+  color: rgb(225, 105, 0);
+}
+.hook:hover {
+  color: rgba(225, 105, 0, 1);
+}
