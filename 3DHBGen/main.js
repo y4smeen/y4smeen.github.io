@@ -1,4 +1,12 @@
-﻿if (!Detector.webgl) {
+﻿/**
+ * main file of WebGL 3D Human Body Generator.
+ *
+ * @author  Zishun Liu
+ * Modified by Yasmeen Roumie
+ *
+ */
+
+if (!Detector.webgl) {
   Detector.addGetWebGLMessage();
 }
 
@@ -79,35 +87,132 @@ function initGUI() {
   var viewport = document.getElementById("viewport");
   var main = new window.yagui.GuiMain(viewport, onWindowResize); // main gui
 
+  // default values
+  GENDER = GenderEnum.Female;
+
+  var defaultBust = arrayParamsDefaultF[0];
+  var defaultUnderBust = arrayParamsDefaultF[1];
+  var defaultWaist = arrayParamsDefaultF[2];
+  var defaultHips = arrayParamsDefaultF[3];
+  var defaultNeckGirth = arrayParamsDefaultF[4];
+  var defaultInsideLeg = arrayParamsDefaultF[5];
+  var defaultShoulders = arrayParamsDefaultF[6];
+
   // Parse URL parameters to get body parameters
   const urlParams = new URLSearchParams(window.location.search);
 
   const genderParam = urlParams.get("gender");
-
-  console.log("gender param", genderParam);
-
-  const gender = genderParam.toLowerCase();
-  if (gender === "male" || gender === "mens" || gender === "men") {
-    GENDER = GenderEnum.Male;
-  } else {
-    GENDER = GenderEnum.Female;
+  if (genderParam) {
+    console.log("gender param", genderParam);
+    const gender = genderParam.toLowerCase();
+    if (gender === "male" || gender === "mens" || gender === "men") {
+      GENDER = GenderEnum.Male;
+      defaultBust = arrayParamsDefaultM[0];
+      defaultUnderBust = arrayParamsDefaultM[1];
+      defaultWaist = arrayParamsDefaultM[2];
+      defaultHips = arrayParamsDefaultM[3];
+      defaultNeckGirth = arrayParamsDefaultM[4];
+      defaultInsideLeg = arrayParamsDefaultM[5];
+      defaultShoulders = arrayParamsDefaultM[6];
+    }
   }
+
+  // height
+  const height = urlParams.get("height");
+  console.log("height param", height);
+  if (height) {
+    arrayParams[7] = height;
+  }
+
+  // weight
+  const weight = urlParams.get("weight");
+  console.log("weight param", weight);
+
+  // Convert weight from pounds to kilograms
+  const weightInPounds = parseFloat(weight);
+  const weightInKg = weightInPounds * 0.453592; // 1 pound is approximately 0.453592 kilograms
+  console.log("weight in kg", weightInKg);
+
+  // Adjust height and weight multipliers based on gender
+  const heightMultiplier = height / (GENDER === GenderEnum.Male ? 180 : 160); // Adjust for height based on gender
+  const weightMultiplier = weightInKg / (GENDER === GenderEnum.Male ? 70 : 60); // Adjust for weight based on gender
 
   const shoulders = urlParams.get("shoulders");
   console.log("shoulders param", shoulders);
 
+  // Adjust shoulder width based on height and gender
   switch (shoulders.toLowerCase()) {
     case "narrow":
-      arrayParams[6] =
-        ((arrayParamsMinMax[0][6] + arrayParamsMinMax[1][6]) / 2) * 0.9;
+      if (GENDER === GenderEnum.Male) {
+        arrayParams[6] =
+          defaultShoulders *
+          0.9 *
+          heightMultiplier *
+          (1 - heightMultiplier * 0.1); // Adjust 180 based on average height and additional scaling for shorter individuals
+      } else {
+        arrayParams[6] =
+          defaultShoulders *
+          0.85 *
+          heightMultiplier *
+          (1 - heightMultiplier * 0.15); // Adjust 180 based on average height and additional scaling for shorter individuals
+      }
       break;
     case "average":
-      arrayParams[6] = (arrayParamsMinMax[0][6] + arrayParamsMinMax[1][6]) / 2;
+      arrayParams[6] = defaultShoulders * heightMultiplier; // Adjust 180 based on average height
       break;
     case "wide":
-      arrayParams[6] =
-        ((arrayParamsMinMax[0][6] + arrayParamsMinMax[1][6]) / 2) * 1.1;
+      if (GENDER === GenderEnum.Male) {
+        arrayParams[6] =
+          defaultShoulders *
+          1.1 *
+          heightMultiplier *
+          (1 + heightMultiplier * 0.1); // Adjust 180 based on average height and additional scaling for shorter individuals
+      } else {
+        arrayParams[6] =
+          defaultShoulders *
+          1.15 *
+          heightMultiplier *
+          (1 + heightMultiplier * 0.15); // Adjust 180 based on average height and additional scaling for shorter individuals
+      }
   }
+
+  // Adjust waist based on height and weight
+  const waist = urlParams.get("waist");
+  switch (waist.toLowerCase()) {
+    case "narrow":
+      arrayParams[2] = defaultWaist * 0.9 * heightMultiplier * weightMultiplier; // Adjust for weight
+      break;
+    case "average":
+      arrayParams[2] = defaultWaist * heightMultiplier * weightMultiplier; // Adjust for weight
+      break;
+    case "wide":
+      arrayParams[2] = defaultWaist * 1.1 * heightMultiplier * weightMultiplier; // Adjust for weight
+  }
+
+  // Adjust hips based on height and weight
+  const hips = urlParams.get("hips");
+  switch (hips.toLowerCase()) {
+    case "narrow":
+      arrayParams[3] = defaultHips * 0.9 * heightMultiplier * weightMultiplier; // Adjust for weight
+      break;
+    case "average":
+      arrayParams[3] = defaultHips * heightMultiplier * weightMultiplier; // Adjust for weight
+      break;
+    case "wide":
+      arrayParams[3] = defaultHips * 1.1 * heightMultiplier * weightMultiplier; // Adjust for weight
+  }
+
+  // Adjust bust based on height and weight
+  arrayParams[0] = defaultBust * heightMultiplier * weightMultiplier; // Adjust for weight
+
+  // Adjust under bust based on height and weight
+  arrayParams[1] = defaultUnderBust * heightMultiplier * weightMultiplier; // Adjust for weight
+
+  // Adjust neck girth based on height and weight
+  arrayParams[4] = defaultNeckGirth * heightMultiplier * weightMultiplier; // Adjust for weight
+
+  // Adjust inside leg based on height
+  arrayParams[5] = defaultInsideLeg * heightMultiplier; // Adjust 180 based on average height
 
   //////// RIGHT SIDEBAR /////////
   var rightbar = main.addRightSidebar(onWindowResize); // right bar
@@ -142,12 +247,11 @@ function initScene() {
     1000
   );
 
-  // Set camera position to face the body face on
-  CAMERA.position.set(0, 1.5, 2.5); // Adjust the position based on your scene
+  // Set camera position to face the body face on more directly
+  CAMERA.position.set(0, 0.8, 2.5); // first value is left/right, second is up/down, third is forward/backward
 
-  // Set camera target to focus on the body
-  CAMERA.lookAt(new THREE.Vector3(0, 0.8, 0)); // Adjust the target based on your scene
-
+  // Set camera target to focus more directly on the body
+  CAMERA.lookAt(new THREE.Vector3(0, 0.6, 0)); // Adjust the target based on your scene for a more direct focus
   //////// Scene ////////
 
   SCENE = new THREE.Scene();
