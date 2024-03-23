@@ -213,26 +213,6 @@ function initGUI() {
 
   // Adjust inside leg based on height
   arrayParams[5] = defaultInsideLeg * heightMultiplier; // Adjust 180 based on average height
-
-  //////// RIGHT SIDEBAR /////////
-  var rightbar = main.addRightSidebar(onWindowResize); // right bar
-  var menuright_body = rightbar.addMenu("Body");
-  menuright_body.addTitle("Parameters (cm)");
-  menuright_body.addCombobox("Gender", GENDER, setGender, ["Female", "Male"]);
-  for (var i = 0; i < numParams; ++i) {
-    var slider;
-    slider = menuright_body.addSlider(
-      arrayParamNames[i], // string name
-      arrayParams[i], // default value
-      arrayParamFuncs[i], // callback onchage
-      arrayParamsMinMax[0][i], // min
-      arrayParamsMinMax[1][i], // max
-      0.1
-    ); // step
-    GUI_SLIDERS.push(slider);
-  }
-  //   GUI_BUTTON_FIX = menuright_body.addButton("Fix Me", fixme, null);
-  //   GUI_BUTTON_FIX.setEnable(false);
 }
 
 function initScene() {
@@ -275,47 +255,6 @@ function initScene() {
   plane.rotation.x = -Math.PI / 2;
   SCENE.add(plane);
 
-  var circleMaterial = new THREE.MeshLambertMaterial({ color: 0x999999 });
-  var rect = new THREE.Mesh(
-    new THREE.PlaneGeometry(0.3, 0.1, 1, 1),
-    circleMaterial
-  );
-  var geom = new THREE.Geometry();
-  var corner1 = 0.5;
-  var corner2 = 0.2;
-  var corner3 = 0.08;
-  var cornerY = 0.01;
-  geom.vertices[0] = new THREE.Vector3(corner1, cornerY, corner1);
-  geom.vertices[1] = new THREE.Vector3(corner1, cornerY, corner1 - corner2);
-  geom.vertices[2] = new THREE.Vector3(
-    corner1 - corner3,
-    cornerY,
-    corner1 - corner2
-  );
-  geom.vertices[3] = new THREE.Vector3(
-    corner1 - corner3,
-    cornerY,
-    corner1 - corner3
-  );
-  geom.vertices[4] = new THREE.Vector3(
-    corner1 - corner2,
-    cornerY,
-    corner1 - corner3
-  );
-  geom.vertices[5] = new THREE.Vector3(corner1 - corner2, cornerY, corner1);
-  geom.faces[0] = new THREE.Face3(0, 1, 2);
-  geom.faces[1] = new THREE.Face3(0, 2, 3);
-  geom.faces[2] = new THREE.Face3(0, 3, 4);
-  geom.faces[3] = new THREE.Face3(0, 4, 5);
-  var corner = new THREE.Mesh(geom, circleMaterial);
-  corner.receiveShadow = true;
-  SCENE.add(corner);
-  for (var i = 1; i < 4; ++i) {
-    var corner1 = corner.clone();
-    corner1.rotation.y = (Math.PI / 2) * i;
-    SCENE.add(corner1);
-  }
-
   SCENE.fog = new THREE.FogExp2(this.fogColor, 0.05);
 
   //////// Renderer ////////
@@ -337,44 +276,6 @@ function initScene() {
   CONTROLS.enableZoom = false; // change fov is better
   CONTROLS.target = new THREE.Vector3(0, 0.8, 0);
   CONTROLS.maxPolarAngle = Math.PI * 0.55;
-
-  //console.log(SCENE);
-}
-
-function initPhoto() {
-  var texture = new THREE.TextureLoader().load("./data/front.jpg");
-
-  var material = new THREE.MeshPhongMaterial({
-    //color: 0x999999,
-    side: THREE.DoubleSide,
-    map: texture,
-  });
-  var geom = new THREE.Geometry();
-  var z = -0.1;
-  var x_min = -1.02;
-  var y_min = -0.1;
-  var size = 1.9;
-  geom.vertices[0] = new THREE.Vector3(x_min + size, y_min, z);
-  geom.vertices[1] = new THREE.Vector3(x_min + size, y_min + size, z);
-  geom.vertices[2] = new THREE.Vector3(x_min, y_min + size, z);
-  geom.vertices[3] = new THREE.Vector3(x_min, y_min, z);
-  geom.faces[0] = new THREE.Face3(0, 1, 2);
-  geom.faces[1] = new THREE.Face3(0, 2, 3);
-  //geom.faceVertexUvs[0][0] = [0,0]
-
-  geom.faceVertexUvs[0] = [];
-  geom.faceVertexUvs[0].push([
-    new THREE.Vector2(0, 0),
-    new THREE.Vector2(0, 1),
-    new THREE.Vector2(1, 1),
-  ]);
-  geom.faceVertexUvs[0].push([
-    new THREE.Vector2(0, 0),
-    new THREE.Vector2(1, 1),
-    new THREE.Vector2(1, 0),
-  ]);
-  var photo = new THREE.Mesh(geom, material);
-  SCENE.add(photo);
 }
 
 function initCloth() {
