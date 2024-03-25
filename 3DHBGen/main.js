@@ -240,7 +240,9 @@ function initScene() {
 
   // Ground Plane / floor
   var groundPlaneMaterial = new THREE.MeshPhongMaterial({
-    color: 0xaaaaaa,
+    color: 0xffffff,
+    opacity: 0.5,
+    transparent: true,
     wireframe: false,
     side: THREE.DoubleSide,
   });
